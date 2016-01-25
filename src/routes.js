@@ -7,6 +7,8 @@ import {
     Login,
     LoginSuccess,
     NotFound,
+    Tractor,
+    Trailer
   } from 'containers';
 
 export default (store) => {
@@ -42,6 +44,8 @@ export default (store) => {
 
       { /* Routes */ }
       <Route path="login" component={Login}/>
+      <Route path="tractor" component={Tractor}/>
+      <Route path="trailer" component={Trailer}/>
 
       { /* Catch all route */ }
       <Route path="*" component={NotFound} status={404} />
