@@ -15,10 +15,10 @@ module.exports = Object.assign({
   apiHost: process.env.APIHOST || 'localhost',
   apiPort: process.env.APIPORT,
   app: {
-    title: 'Redux Decagon',
+    title: 'Tractor Trailer',
     description: 'All the modern best practices in one example.',
     head: {
-      titleTemplate: 'Redux Decagon: %s',
+      titleTemplate: 'Tractor Trailer: %s',
       meta: [
         {name: 'description', content: 'All the modern best practices in one example.'},
         {charset: 'utf-8'},
