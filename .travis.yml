@@ -1,18 +1,21 @@
 language: node_js
-
 node_js:
-  - "0.12"
-  - "4.0"
-  - "4"
-  - "stable"
-
+- '0.12'
+- '4.0'
+- '4'
+- stable
 sudo: false
-
 before_script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
 script:
-  - npm run lint
-  - npm test
-  - npm run test-node
+- npm run lint
+- npm test
+- npm run test-node
+deploy:
+  provider: heroku
+  api_key:
+    secure: W94XobkchOYlOiXx+RBFWY9fvqxaAmk/B9VlCCEy1GrRO1/RYih8w/YqEC+wlXx7oHHgj+qwtIpBkSp5TXrCavp+RYDD5/xQRB4JA2ADwgJKyFvLbnt46t0VNbCnuZokaS13FDocc7BDvG1MGaTv4FZ6o5gsW0llohYmXGEgQ+No0LwKQ5Tak1MKIisDfghC8XFbs1TQeiAY4h7fB3MWuvZCXO/mtwmIGrfL6OdHKwwYX7ySOH9nbGCsPi7B2/ArWOU7WrlB4dZgMdoDuebcPBevww5SJtGu7ymxhXoe4vhTWaNMjJDs4ZzQwfl+TemHZ6geHPM1o8ZRUoggOZHaHYTq4jkNSCymhhvSJYTbKUJ3F3dlp47M4KaBauZcAr0q7hNKFLGsK/cu7nCx7LMuX7HREG0FOBDUJb4Tri1qQdARHV5Z8SsfXpUiEcboW5GGKPooBBGTNDtHiIvFgnyG0Ywo79oDQS7mFHFNLdv4/+JtTr6/3JmHzE9VI9Sp1MHLckkZxBp/84Ht6RC7nFYt/9Bih+DL1DI52/0E/YVp7yk0Zfdxomp+OWXpyF/cw6AO9lOmOp4UK8AxLjVZfw6cjuWWskbKjoimk4WpwRR5NI52MCftu24N4jDH4fxWgtsgt3aHnmEifDwaFU2yPc5Bkb5rLDYYmEmWWll1rUfj0zw=
+  app: beanstalk-tractor-trailer
+  on:
+    repo: gregsabo/beanstalk-tractor-trailer
